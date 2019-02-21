@@ -1,0 +1,31 @@
+{
+  "name": "wxcomment",
+  "version": "1.0.0",
+  "description": "wechat comment system",
+  "scripts": {
+    "test": "echo 0",
+    "lint": "tslint src/**/*.ts",
+    "clear": "minapp clear dist",
+    "dev": "minapp dev",
+    "build": "minapp build --publicPath http://your.static.server/"
+  },
+  "author": "wcypersonal<417177466@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@minapp/component-demo": "^2.0.0",
+    "@minapp/component-toast": "^2.0.0",
+    "@minapp/core": "^2.0.0",
+    "@minapp/mobx": "^2.0.0",
+    "@minapp/wx": "latest",
+    "mobx": "^3.5.1",
+    "tslib": "^1.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "ts-lint": "^4.5.1",
+    "ts-loader": "^4.0.0",
+    "typescript": "^2.7.1"
+  }
+}
