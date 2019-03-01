@@ -5,12 +5,6 @@
   1. 如果没有语法高亮，且你使用的是 vscode 编辑器的话，建义在 vscode 插件库中安装 minapp-vscode 插件
 -->
 
-<block wx:if="{{shown}}">
-    <canvas class="QRcode-canvas" canvas-id="QRcode" bind:tap="hideQRcode"></canvas>
-    <button style="position:fixed;left:{{dx}}px;top:{{dy}}px;width:230px;height:50px;font-size:20px;" 
-        type="primary" bind:tap="saveQRcode">保存二维码</button>
-    <!-- <text style="position:fixed;left:{{dx}}px;top:{{dy+50}}px;font-size:15px;">保存图片可分享到朋友圈</text> -->
-</block>
 <view hidden="{{shown}}">
     <view class="user">
         <image class="avatar" src="{{avatar}}" background-size="cover" />
