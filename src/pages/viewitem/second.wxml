@@ -1,0 +1,13 @@
+<view>
+    <view class="title">文章标题</view>
+    <view class="content">
+        <view class="content-title">
+            <view class="content-title-inner">一级标题</view>
+        </view>
+        <view class="content-divide"></view>
+        <view class="content-part">
+            文章内容
+        </view>
+    </view>
+
+</view>

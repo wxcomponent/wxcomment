@@ -1,0 +1,66 @@
+<!--
+  此文件是由模板文件 ".dtpl/page/$rawModuleName.wxml.dtpl" 生成的，你可以自行修改模板
+
+  注意：
+  1. 如果没有语法高亮，且你使用的是 vscode 编辑器的话，建义在 vscode 插件库中安装 minapp-vscode 插件
+-->
+
+<block wx:if="{{shown}}">
+    <canvas class="QRcode-canvas" canvas-id="QRcode" bind:tap="hideQRcode"></canvas>
+    <button style="position:fixed;left:{{dx}}px;top:{{dy}}px;width:230px;height:50px;font-size:20px;" 
+        type="primary" bind:tap="saveQRcode">保存二维码</button>
+    <!-- <text style="position:fixed;left:{{dx}}px;top:{{dy+50}}px;font-size:15px;">保存图片可分享到朋友圈</text> -->
+</block>
+<view hidden="{{shown}}">
+    <view class="user">
+        <image class="avatar" src="{{avatar}}" background-size="cover" />
+        <text> {{nickName}}</text>
+    </view>
+    <i-tabs current="{{current}}" color="#3099ff" bindchange="handleChange" i-class="tab">  
+        <i-tab key="history" title="阅读历史" data-key="history"></i-tab>
+        <i-tab key="topic" title="我的文章" data-key="topic"></i-tab>
+        <i-tab key="collect" title="我的收藏" data-key="collect"></i-tab>
+        <i-tab key="user" title="用户信息" data-key="user"></i-tab>  
+    </i-tabs>
+    <!-- <tabList></tabList> -->
+
+    <view hidden="{{current!='history'}}">
+        <block wx:for="{{hisInfos}}" wx:key="{{item.id}}">
+            <recommendCard avatar="{{item.avatarUrl}}" nickname="{{item.nickName}}" time="{{item.time}}" 
+                data-info="{{item}}" bind:tap="clickDetail" recommended="{{item.elite == 1}}">
+
+                <view slot="title">{{item.title}}</view>
+                <view slot="content">{{item.sub}}</view>
+                <view slot="footer">{{item.readTime}}阅读  ● {{item.agree}}赞同</view>
+
+            </recommendCard>
+        </block>
+    </view>
+    <view hidden="{{current!='topic'}}">
+        <block wx:for="{{myArticles}}" wx:key="{{item.id}}">
+            <recommendCard avatar="{{item.avatarUrl}}" nickname="{{item.nickName}}" time="{{item.time}}" 
+                data-info="{{item}}" bind:tap="clickDetail" recommended="{{item.elite == 1}}">
+
+                <view slot="title">{{item.title}}</view>
+                <view slot="content">{{item.sub}}</view>
+                <view slot="footer">{{item.readTime}}阅读  ● {{item.agree}}赞同</view>
+
+            </recommendCard>
+        </block>
+    </view>
+    <view hidden="{{current!='user'}}">
+        用户信息
+    </view>
+    <view hidden="{{current!='collect'}}">
+        <block wx:for="{{collectInfos}}" wx:key="{{item.id}}">
+            <recommendCard avatar="{{item.avatarUrl}}" nickname="{{item.nickName}}" time="{{item.time}}" 
+                data-info="{{item}}" bind:tap="clickDetail" recommended="{{item.elite == 1}}">
+
+                <view slot="title">{{item.title}}</view>
+                <view slot="content">{{item.sub}}</view>
+                <view slot="footer">{{item.readTime}}阅读  ● {{item.agree}}赞同</view>
+
+            </recommendCard>
+        </block>
+    </view>
+</view>

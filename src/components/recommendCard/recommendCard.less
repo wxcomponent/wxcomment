@@ -1,0 +1,111 @@
+/*
+  此文件是由模板文件 ".dtpl/component/$rawModuleName.$style.dtpl" 生成的，你可以自行修改模板
+
+  注意：文件为空，编译时不会生成新文件
+*/
+.i-card{
+  margin:5px auto;
+  font-size:14px;
+  overflow:hidden;
+  position:relative;
+  background:#fff;
+  border:1rpx solid #dddee1;
+  border-radius:5px;
+  width: 94%;
+}
+.i-card-full{
+  margin:0;
+  border-left:none;
+  border-right:none;
+  border-radius:0
+}
+.i-card-header{
+  display:flex;
+  padding:6px 16px;
+  align-items:center
+}
+.i-card-header-content{
+  flex:1;
+  text-align:left;
+  // font-size: 30px;
+  font-size: 32px;
+}
+.i-card-header-thumb{
+  display:inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  overflow:hidden;
+  background-size:cover;
+  vertical-align:middle
+}
+.i-card-header-title{
+  display:inline-block;
+  vertical-align:middle;
+  font-size:30px;
+  color:#1c2438
+}
+.i-card-header-extra{
+  flex:1;
+  text-align:right;
+  font-size:25px;
+  color:#80848f
+}
+
+.i-card-body{
+  display: flex;
+  flex-direction: row;
+  position:relative;
+  padding:6px 16px;
+  color:#000000;
+  // font-size:30px;
+  font-size:32px;
+}
+.i-card-body::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:200%;
+  height:200%;
+  transform:scale(.5);
+  transform-origin:0 0;
+  pointer-events:none;
+  box-sizing:border-box;
+  border:0 solid #e9eaec;
+  border-top-width:1px
+}
+.i-card-recommended{
+  margin-left: 0px;
+  margin-right: 10px;
+  width: 100px;
+  // font-size:25px;
+  font-size:30px;
+  text-align: center;
+  display: table-cell;
+  vertical-align:middle;
+  // color:#80848f;
+  // background-color: yellow;
+  // border-radius: 10px;
+  // border: 1px solid rgb(51, 68, 16);
+  color:purple;
+  background-color: #faf4ff;
+  border-radius: 10px;
+  border: 1px solid #dcbef9;
+}
+.i-card-body2{
+  position:relative;
+  padding:6px 16px;
+  color:#495060;
+  font-size:30px;
+}
+.i-card-footer{
+  position:relative;
+  padding:6px 16px;
+  color:#80848f;
+  // font-size:20px
+  font-size:25px
+}

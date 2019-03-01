@@ -1,0 +1,25 @@
+<view>
+    <view class="title">文章标题4</view>
+    <view class="content">
+        <image class="content-image" src="http://img5.imgtn.bdimg.com/it/u=599300736,3107881691&fm=26&gp=0.jpg" mode="widthFix" />
+        <view class="content-title">
+            <view class="content-title-inner">一、文章一级标题</view>
+        </view>
+        <view class="content-part">文章内容1</view>
+        <view class="content-part">文章内容2</view>
+        <view class="content-title-second">
+            文章二级标题
+        </view>
+        <view class="content-part">1、文章内容</view>
+        <view class="content-part">2、文章内容</view>
+        <view class="content-part">3、文章内容</view>
+        <view class="content-title">
+            <view class="content-title-inner">二、文章一级标题</view>
+        </view>
+        <image class="content-image" src="http://pic35.photophoto.cn/20150517/0020033044813873_b.JPG" mode="widthFix" />
+        <view class="content-title-second">
+            文章二级标题
+        </view>
+        <view class="content-part">文章内容</view>
+    </view>
+</view>

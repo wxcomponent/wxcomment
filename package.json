@@ -1,7 +1,7 @@
 {
   "name": "wxcomment",
   "version": "1.0.0",
-  "description": "wechat comment system",
+  "description": "微信小程序评论",
   "scripts": {
     "test": "echo 0",
     "lint": "tslint src/**/*.ts",

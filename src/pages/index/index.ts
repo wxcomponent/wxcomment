@@ -63,4 +63,10 @@ export default class extends MyPage {
       this.store.userInfo = userInfo
     }
   }
+
+
+  directToFirst(){
+    console.log('direct')
+    this.app.$url.first.go()
+  }
 }

@@ -1,0 +1,40 @@
+<!--
+  此文件是由模板文件 ".dtpl/page/$rawModuleName.wxml.dtpl" 生成的，你可以自行修改模板
+
+  注意：
+  1. 如果没有语法高亮，且你使用的是 vscode 编辑器的话，建义在 vscode 插件库中安装 minapp-vscode 插件
+-->
+
+<view>
+  <swiper autoplay="{{true}}" interval="5000" duration="500" 
+  indicator-dots="{{true}}"
+  circular="{{true}}"
+  indicator-active-color="white"
+  >
+    <block wx:for="{{imageUrls}}" wx:key="{{item.id}}">
+      <swiper-item class="item">
+        <image src="{{item.img}}" class="item-image" data-info="{{item}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="read">
+    <view class="readM">
+      <view class="readL">推荐阅读</view>
+      <view class="readR" bind:tap="toReplays">查看全部</view>
+    </view>
+  </view>
+
+  <scroll-view class="main-scroll" style='height: {{windowHeight - 100}}px' scroll-y="{{true}}">
+      <block wx:for="{{recomInfos}}" wx:key="{{item.id}}"> 
+        <recommendCard avatar="{{item.avatarUrl}}" nickname="{{item.nickName}}" recommended="{{true}}" time="{{item.time}}" 
+            data-info="{{item}}" bind:tap="clickDetail" >
+
+            <view slot="title">{{item.title}}</view>
+            <view slot="content">{{item.sub}}</view>
+            <view slot="footer">{{item.readTime}}阅读  ● {{item.agree}}赞同</view>
+
+        </recommendCard>
+      </block>
+  </scroll-view>
+</view>

@@ -12,6 +12,13 @@
     /*# INJECT_START {"key": "page"} #*/
     "pages/index/index",
     "pages/logs/logs",
+    "pages/first/first",
+    "pages/second/second",
+    "pages/third/third",
+    "pages/fourth/fourth",
+    "pages/viewitem/viewitem",
+    "pages/repdetail/repdetail",
+    "pages/query/query"
     /*# INJECT_END #*/
   ],
   "window": {
@@ -19,5 +26,33 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "tabBar": {
+    "color": "#CCCACA",
+    "selectedColor": "#3099ff",
+    "backgroundColor": "#fafafa",
+    "list": [{
+      "pagePath": "pages/first/first",
+      "selectedIconPath": "images/mine_fill.png",
+      "iconPath": "images/mine.png",
+      "text": "样式一"
+    },{
+      "pagePath": "pages/second/second",
+      "selectedIconPath": "images/mine_fill.png",
+      "iconPath": "images/mine.png",
+      "text": "样式二"
+    },
+    {
+      "pagePath": "pages/third/third",
+      "selectedIconPath": "images/mine_fill.png",
+      "iconPath": "images/mine.png",
+      "text": "样式三"
+    },
+    {
+      "pagePath": "pages/fourth/fourth",
+      "selectedIconPath": "images/mine_fill.png",
+      "iconPath": "images/mine.png",
+      "text": "样式四"
+    }]
+  },
 }

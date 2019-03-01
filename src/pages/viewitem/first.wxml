@@ -1,0 +1,28 @@
+<view>
+    <view class="title">文章题目1</view>
+    <view class="top">
+        <view class="top-text">文章导读内容</view>
+    </view>
+    <view class="content">
+        <view class="content-part">
+            文章主要内容，该部分内容为一个段落。
+        </view>
+        <view class="content-part">
+            文章内容：<span class="content-bold">加粗</span>部分
+        </view>
+        <view class="content-divide"></view>
+        <view class="content-part">
+            文章第二部分内容。分隔符之后文章内容。
+        </view>
+        <view class="content-title">
+            <view class="content-title-inner">一、文章一级标题</view>
+        </view>
+        <view class="content-title-second">
+            文章二级标题
+        </view>
+        <view class="content-divide"></view>
+        <view class="content-part">
+            文章耳机标题下内容
+        </view>
+    </view>
+</view>

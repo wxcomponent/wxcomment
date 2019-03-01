@@ -1,0 +1,96 @@
+<!--
+  此文件是由模板文件 ".dtpl/page/$rawModuleName.wxml.dtpl" 生成的，你可以自行修改模板
+
+  注意：
+  1. 如果没有语法高亮，且你使用的是 vscode 编辑器的话，建义在 vscode 插件库中安装 minapp-vscode 插件
+-->
+
+<block wx:if="{{shown}}">
+    <canvas class="QRcode-canvas" canvas-id="QRcode" bind:tap="hideQRcode"></canvas>
+    <button style="position:fixed;left:{{dx}}px;top:{{dy}}px;width:230px;height:50px;font-size:20px;" 
+        type="primary" bind:tap="saveQRcode">保存二维码</button>
+    <!-- <text style="position:fixed;left:{{dx}}px;top:{{dy+50}}px;font-size:15px;">保存图片可分享到朋友圈</text> -->
+</block>
+<view class="main" hidden="{{shown}}">
+<view  class="scrollStyle">
+  <view class="i-class i-card-body">
+        <!-- <view class="i-card-recommended" wx:if="{{ info.elite == 1 }}">精华</view> -->
+        <view class="title">{{info.title}}</view>
+        <!-- <slot name="title">{{reInfos.title}}</slot> -->
+        <!-- <view class="i-class i-card-title">{{reInfos.title}}</view> -->
+  </view>
+  <!-- <view class="title">{{info.title}}</view> -->
+  <view class="avaTime">
+    <view>
+      <i-card title="{{info.nickName}}" extra="{{info.time}}" thumb="{{info.avatarUrl}}">
+        <text slot="content" wx:if="{{readPower === true}}">{{content}}</text>
+        <view slot="content" wx:else>暂无阅读权限，请分享复盘获取精华复盘阅读权限</view>
+        <view slot="footer">
+          <i-icon type="praise_fill" size="30" color="#2d8cf0" wx:if="{{info.user_agree === true}}"  bind:tap="agreeArticle"/>
+          <i-icon type="praise" size="30"   bind:tap="agreeArticle"  wx:else/>
+          <i-icon type="collection_fill" size="30" color="#2d8cf0" wx:if="{{info.user_collect === true}}" bind:tap="collectArticle"/>
+          <i-icon type="collection" size="30"  bind:tap="collectArticle" wx:else/>
+          <i-icon type="trash" size="30" bind:tap="deleteArticle" wx:if="{{deletePower}}"/>
+        </view>
+      </i-card>
+    </view>
+  </view>
+  <block wx:for="{{info.commentList}}" wx:key="{{item.id}}">
+    <view class="i-class i-card i-card-full">
+      <view class="i-class i-card-header">
+        <view class="i-card-header-content">
+            <image class="i-card-header-thumb" src="{{ item.avatarUrl }}" wx:if="{{ item.avatarUrl }}" />
+            {{ item.nickName }}
+        </view>
+        <view class="i-card-header-extra">{{ item.time }}</view>
+      </view>
+      <view class="i-class i-card-body">
+        <!-- <view>{{item.zone}} - {{item.company}} - {{item.post}}</view> -->
+        <view>{{item.content}}</view>
+      </view>
+      <!-- <view class="i-class i-card-footer">
+        <view class="caption-wrap">
+          <i-collapse name="查看回复信息">
+            <i-collapse-item title="查看回复信息">
+              <view slot="content"> 
+                  <block wx:if="{{item.answers}}" wx:for="{{item.answers}}" wx:for-item="answer" wx:key="{{answer.id}}">
+                    <view class="answer-left" wx:if="{{item.user === answer.user}}">
+                      <image src="{{answer.src}}" class="answer-left-image"></image>
+                      <view class="answer-left-name">{{answer.nickName}}:</view>
+                      <view>{{answer.content}}</view>
+                    </view>
+                    <view class="answer-right" wx:else>
+                      <image src="{{answer.src}}" class="answer-right-image"></image>
+                      <view class="answer-right-name">:{{answer.nickName}}</view>
+                      <view class="answer-right-content">{{answer.content}}</view>
+                    </view>
+                  </block>
+                  <text class="answer-reply">回复</text>
+              </view>
+            </i-collapse-item>
+          </i-collapse>
+        </view>
+      </view> -->
+    </view>
+  </block>
+  </view>
+  <view class="bottom bottom-fixed">
+    <!-- <slot></slot> -->
+    <!-- <view bind:tap="backToMain">
+      <i-icon type="homepage_fill" size="30" color="#ababab" bind:tap="backToMain"/>
+      首页
+    </view>
+    <!-- <view class="bottom-divider"></view> -->
+    <!-- <view bind:tap="onShareQrCodeArticle">
+      <i-icon type="share_fill" size="30" color="#ababab" bind:tap="onShareQrCodeArticle"/>
+      分享
+    </view>  -->
+    <i-input placeholder="评论内容" maxlength="1000" class="bottom-input" 
+            bind:change="onCommentChange"
+            value="{{commentValue}}"/> 
+    <i-icon type="send" size="30" color="#ababab" bind:tap="onSendComment"/>
+    <button class="share-button" size="30" bind:tap="onShareQrCodeArticle">
+      <i-icon type="share_fill" size="30" color="#ababab" bind:tap="onShareQrCodeArticle"/>
+    </button>
+  </view>
+</view>

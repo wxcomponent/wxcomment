@@ -27,6 +27,20 @@ export default class extends MyApp {
     } else {
       console.log('没有授权过')
     }
+
+
+
+    //获取高度
+    try {
+      var res = wx.getSystemInfoSync()
+      this.store.windowHeight=res.windowHeight
+      this.store.windowWidth=res.windowWidth
+      console.log('屏幕高度:',this.store.windowHeight)
+      console.log('屏幕宽度:',this.store.windowWidth)
+    } catch (e) {
+      console.log("获取屏幕宽度高度失败")
+    // Do something when catch error
+    }
   }
 }
 

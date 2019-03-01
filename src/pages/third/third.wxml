@@ -1,0 +1,63 @@
+<!--
+  此文件是由模板文件 ".dtpl/page/$rawModuleName.wxml.dtpl" 生成的，你可以自行修改模板
+
+  注意：
+  1. 如果没有语法高亮，且你使用的是 vscode 编辑器的话，建义在 vscode 插件库中安装 minapp-vscode 插件
+-->
+<block wx:if="{{shown}}">
+    <canvas class="QRcode-canvas" canvas-id="QRcode" bind:tap="hideQRcode"></canvas>
+    <view style='clear:both;'></view>
+    <button style="position:fixed;left:{{dx}}px;top:{{dy}}px;width:250px;height:50px;font-size:20px;" 
+        type="primary" bind:tap="saveQRcode">保存二维码</button>
+    <!-- <text style="position:fixed;left:{{dx}}px;top:{{dy+50}}px;font-size:15px;">保存图片可分享到朋友圈</text> -->
+    <!-- <button style="position:fixed;left:{{dx}}px;top:{{dy+20}}px;width:250px;height:50px;font-size:20px;" 
+        type="primary" bind:tap="saveQRcode">保存二维码</button>
+    <text style="position:fixed;left:{{dx}}px;top:{{dy+70}}px;font-size:20px;">保存图片可分享到朋友圈</text> -->
+</block>
+<view hidden="{{shown}}">
+  <view class="i-class i-cell i-input i-input-wrapped">  
+    <view class="i-input-icon">
+      <i-icon type="search" size="35" color="#2d8cf0"/>
+    </view>
+    <input
+        type="text"
+        value="{{ value }}"
+        placeholder="请输入搜索内容"
+        bindfocus="handleInputFocus"
+    />
+    
+  </view>
+  <view class="top">
+    <view class="top-x">
+      <view class="top-icon"  bind:tap="toRepnew">
+         <i-icon type="createtask" size="28" class="top-x"/>
+         添加文章
+      </view>
+      <view>
+        <i-button class="top-share" bind:click="handleOpen">{{orderInfo}}</i-button>
+      </view>    
+    </view>
+  </view>
+  <modal class="modal" title="添加管理员,提供优质复盘" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
+    <image class="image" src="https://wechatx.offerqueens.cn/weimage/super1.png" mode='aspectFill'></image>
+  </modal>
+  <view class="join">辅助信息</view>
+
+  <scroll-view class="replays-scroll" style="height: {{windowHeight - 100}}px" scroll-y="{{true}}">
+      <view>
+          <block wx:for="{{articleInfos}}" wx:key="{{item.id}}">
+              <repItem reInfos="{{item}}" data-info="{{item}}" bind:tap="clickDetail"></repItem>
+          </block>
+      </view>
+  </scroll-view>
+  
+    
+  <i-action-sheet visible="{{ visible }}" 
+  actions="{{ actions }}" 
+  bind:cancel="handleCancel" 
+  bind:click="handleClickItem" />
+
+  <i-button bind:click="onShareQrCodeArticle" type="primary">分享复盘</i-button>
+  
+
+</view>

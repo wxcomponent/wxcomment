@@ -1,0 +1,40 @@
+<!--
+  此文件是由模板文件 ".dtpl/component/$rawModuleName.wxml.dtpl" 生成的，你可以自行修改模板
+
+  注意：
+  1. 如果没有语法高亮，且你使用的是 vscode 编辑器的话，建义在 vscode 插件库中安装 minapp-vscode 插件
+-->
+
+<view class="repitem">
+    <!-- <view class="top">
+        <image src="{{reInfos.src}}" class="img"/>
+        <view class="nickName">{{reInfos.nickName}}</view>
+        <view class="time">{{reInfos.time}}</view>
+    </view>
+    <!-- <view class="span">占位</view> -->
+    <!-- <view class="title">{{reInfos.title}}</view>
+    <view class="sub">{{reInfos.sub}}</view>
+    <view class="bottom">
+        <view>{{reInfos.agree}}赞同  ●  {{reInfos.commentList.length}}评论</view>
+    </view>
+    <view class="split"></view> --> 
+    <view class="i-class i-card i-card-full">
+      <view class="i-class i-card-header">
+        <view class="i-card-recommended" wx:if="{{ reInfos.elite == 1 }}">精华</view>
+        <view class="i-card-header-content">
+            <image class="i-card-header-thumb" src="{{ reInfos.avatarUrl }}" wx:if="{{ reInfos.avatarUrl}}" />
+            {{ reInfos.nickName }}
+        </view>
+        <view class="i-card-header-extra">{{ reInfos.time }}</view>
+      </view>
+      <view class="i-class i-card-body">
+        <!-- <view class="i-card-recommended" wx:if="{{ reInfos.elite == 1 }}">精华</view> -->
+        <!-- <slot name="title">{{reInfos.title}}</slot> -->
+        <view class="i-class i-card-title">{{reInfos.title}}</view>
+      </view>
+      <!-- <view class="i-class i-card-title">{{reInfos.title}}</view> -->
+      <view class="i-class i-card-content">{{reInfos.sub}}</view>
+      <view class="i-class i-card-footer">{{reInfos.readTime}}阅读  ●  {{reInfos.agree}}赞同</view>
+      <view class="split"></view>
+      </view>
+</view>

@@ -1,0 +1,263 @@
+/*
+  此文件是由模板文件 ".dtpl/component/$rawModuleName.$style.dtpl" 生成的，你可以自行修改模板
+
+  注意：文件为空，编译时不会生成新文件
+*/
+.main {
+  width: 100%;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  width: 94%;
+  margin: auto;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.avaTime {
+  width: 94%;
+  margin: auto;
+  margin-left: 3%;
+  margin-top: 5px;  
+  display: inline-block;   
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background: #dddee1
+}
+
+.i-card{
+  margin:0 16px;
+  font-size:14px;
+  overflow:hidden;
+  position:relative;
+  background:#fff;
+  border:1rpx solid #dddee1;
+  border-radius:5px
+}
+.i-card-full{
+  margin:0;
+  border-left:none;
+  border-right:none;
+  border-radius:0
+}
+.i-card-header{
+  display:flex;
+  padding:6px 16px;
+  align-items:center
+}
+.i-card-header-content{
+  flex:1;
+  text-align:left;
+  font-size: 30px;
+}
+.i-card-header-thumb{
+  display:inline-block;
+  width: 46px;
+  height: 46px;
+  border-radius: 5px;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  overflow:hidden;
+  background-size:cover;
+  vertical-align:middle
+}
+.i-card-header-title{
+  display:inline-block;
+  vertical-align:middle;
+  font-size:30px;
+  color:#1c2438
+}
+.i-card-header-extra{
+  flex:1;
+  text-align:right;
+  font-size:25px;
+  color:#80848f
+}
+.i-card-body{
+  position:relative;
+  padding:6px 16px;
+  color:#495060;
+  font-size:25px;
+}
+.i-card-body::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:200%;
+  height:200%;
+  transform:scale(.5);
+  transform-origin:0 0;
+  pointer-events:none;
+  box-sizing:border-box;
+  border:0 solid #e9eaec;
+  border-top-width:1px
+}
+.i-card-footer{
+  // position:relative;
+  padding:6px 16px;
+  color:#2d8cf0;
+  font-size:25px;
+  // text-align:right;
+}
+
+.answer-reply {
+  color:#2d8cf0;
+  font-size:20px;
+}
+
+.answer-left {
+  font-size: 20px;
+  color: black;
+  overflow: hidden;
+  display: inline;
+}
+
+.answer-left-image {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  float: left;
+}
+
+.answer-left-name {
+  float: left;
+}
+.answer-right {
+  font-size: 20px;
+  color: black;
+  overflow: hidden;
+  display: inline;
+}
+.answer-right-image{
+  float: right;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+.answer-right-name {
+  float: right;
+}
+.answer-right-content{
+  float: right;
+}
+.i-card-body-inline {
+  display: inline;
+}
+
+.bottom {
+  display:flex;
+    width:100%;
+    height:80px;
+    box-sizing:
+    border-box;
+    position:relative;
+    justify-content:space-around;
+    align-items:center;
+    -webkit-box-align:center;
+    background:#fff;
+    font-size: 20px;
+    box-sizing:border-box;
+    border:0 solid #e9eaec;
+    // border:0 solid black;
+    border-top-width:2px
+}
+
+.bottom-fixed{
+  position:fixed;
+  bottom:0;
+  font-size: 30px;
+  color: #ababab;
+  // z-index:2;
+}
+
+.bottom-divider {
+  width: 3px;
+  height: 80%;
+  
+}
+
+.bottom-input{
+  border-radius: 10px;
+  border: 2px solid #e2e2e2;
+  height: 90%;
+  width: 80%;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.share-button {
+  background: none !important;
+  color: #000 !important;
+}
+
+.share-button::after {
+  border: none;
+}
+
+.scrollStyle {
+  overflow-y: scroll;
+  padding-bottom: 80px;
+}
+.i-card-body{
+  display: flex;
+  flex-direction: row;
+  position:relative;
+  padding:6px 16px;
+  color:#000000;
+  font-size:30px;
+}
+.i-card-body::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:200%;
+  height:200%;
+  transform:scale(.5);
+  transform-origin:0 0;
+  pointer-events:none;
+  box-sizing:border-box;
+  border:0 solid #e9eaec;
+  border-top-width:1px
+}
+.i-card-recommended{
+  margin-left: 3%;
+  margin-right: 5px;
+  width: 100px;
+  margin-top: 5px;
+  // font-size:28px;
+  // height: 40px;
+  // line-height: 40px;
+  text-align: center;
+  // color:#80848f;
+  // background-color: yellow;
+  // border-radius: 10px;
+  // border: 1px solid rgb(51, 68, 16);
+  color:#fa3e3a;
+  background-color: #fff4f3;
+  border-radius: 10px;
+  border: 1px solid #ffb4ae;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.QRcode-canvas{
+  position: fixed;
+  align-self: auto;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+
+}
+button::hover{
+  background-color: #80848f;
+}

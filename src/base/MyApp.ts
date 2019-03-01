@@ -7,6 +7,7 @@ import {Url} from '@minapp/core'
 import {MobxApp} from '@minapp/mobx'
 import {MyStore} from './MyStore'
 
+
 export class MyApp extends MobxApp<MyStore> {
   // @ts-ignore
   $url: {
@@ -21,6 +22,11 @@ export class MyApp extends MobxApp<MyStore> {
     /*# INJECT_START {"key": "pagesMap"} #*/
     index: Url
     logs: Url
+    first: Url
+    second: Url
+    third: Url
+    fourth: Url
     /*# INJECT_END #*/
   }
+
 }
