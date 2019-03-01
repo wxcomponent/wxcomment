@@ -7,6 +7,8 @@
 
 <view hidden="{{shown}}">
     <view class="user">
+        <!-- <image class="avatar" src="http://img.zcool.cn/community/012eb85779d3c90000012e7ec96d6f.jpg@1280w_1l_2o_100sh.jpg" background-size="cover" />
+        <text>用户名称</text> -->
         <image class="avatar" src="{{avatar}}" background-size="cover" />
         <text> {{nickName}}</text>
     </view>
